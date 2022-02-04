@@ -13,3 +13,6 @@ class Controlador extends React.Component {
     );
   }
 }
+// ========================================
+
+ReactDOM.render(<Controlador />, document.getElementById("root"));
