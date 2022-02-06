@@ -1,3 +1,8 @@
+/**
+    @file Componentes react del formulario
+    @author Mario Pérez Pizarro
+*/
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
