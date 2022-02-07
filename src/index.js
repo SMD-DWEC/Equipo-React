@@ -1,56 +1,54 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './form.js'
+
 /**
- * Parte 2:
- * Al pulsar el botón se generará una Lista de Resultados
- * (que será un componente React), que mostrará entre 3 y 5 resultados (aleatorios)
- * (que también serán componentes React).
+ * Al pulsar el botón se generará una Lista de Resultados (que será un componente React),
+ * que mostrará entre 3 y 5 resultados (que también serán componentes React). 
  * Cada resultado será un div a modo de tarjeta con un título y un texto generados al azar.
  */
-
-//Resultados se muestra tras darle a enviar en el formulario.
 class Resultados extends React.Component {
   constructor(props) {
     super(props);
+
+    //Información que se encuentra ligada o enlazada a este componente...
     this.estado = {
-        resultados: ["Hola", "Adiós", "Esto es otro resultado"]
-    };
+      resultados: [
+        ["titulo1", "cuerpo1"],
+        ["titulo2", "cuerpo2"],
+        ["titulo3", "cuerpo3"],
+        ["titulo4", "cuerpo4"],
+        ["titulo5", "cuerpo5"],
+      ]
+    }
   }
 
-  //Renderizamos los resultados...
   render() {
-    return(
+    let resultadosRnd = Math.floor(Math.random()*this.estado.resultados.length+3);
+    let copiaResultados = this.estado.resultados.slice(0, resultadosRnd);
+
+    return (
       <Tarjeta 
-        resultado = {this.estado.resultados}
+        resultado = {copiaResultados}
       />
     );
   }
 }
 
-/**
- * Clase que genera las tarjetas
- * La invocamos con un render en Resultados, con lo que le llega a su constructor una prop (resultado)
- * como en nuestra clase tarjeta no tenemos constructor llama al super y coge el prop directamente.
- */
 class Tarjeta extends React.Component {
-
-  /**
-   * Renderizamos un div.
-   * @returns El div con el resultado del prop
-   */
   render() {
-    return this.props.resultado.map((result, Symbol) => {
-        console.log(result);
-        return ( //Identificamos a cada div con un id único.
-          <div key={Symbol}>
-            {result}
-          </div>
-        );
-    });
+    return this.props.resultado.map((valor, index) => {
+      return (
+        <div className="tarjeta" key={index}>
+          Título: {valor[0]}
+          <hr />
+          {valor[1]}
+        </div>
+      )
+    })
   }
 }
-
 
 // ========================================
 
