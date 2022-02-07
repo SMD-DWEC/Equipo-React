@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
+/**
+ * @author Killian Benavente Ortega
+ * @description Menú lateral...
+ */
+
 function Opciones(props){
     return(
         <li>Opcion {props.num}</li>
