@@ -5,6 +5,10 @@ import './form.js'
 import './menu.js'
 
 /**
+ * @author Sergio Matamoros Delgado
+ * @description Contiene las tarjetas de resultados aleatoriamente
+ */
+/**
  * Al pulsar el botón se generará una Lista de Resultados (que será un componente React),
  * que mostrará entre 3 y 5 resultados (que también serán componentes React). 
  * Cada resultado será un div a modo de tarjeta con un título y un texto generados al azar.
