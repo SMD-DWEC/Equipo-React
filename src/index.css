@@ -1,83 +1,30 @@
+aside{grid-area: aside;}
+main{grid-area: main;}
+
 body {
     font: 14px "Century Gothic", Futura, sans-serif;
     margin: 20px;
+    display: grid;
+    grid-template-areas: 'aside aside main main main';
 }
   
 ol, ul {
     padding-left: 30px;
 }
-  
-.board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-}
-  
-.status {
-    margin-bottom: 10px;
-}
-  
-.square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
-}
-  
-.square:focus {
-    outline: none;
-}
-  
-.kbd-navigation .square:focus {
-    background: #ddd;
-  }
-  
-.game {
-    display: flex;
-    flex-direction: row;
-}
-  
-.game-info {
-    margin-left: 20px;
-}
 
-  
-.errors {
-    background: #c00;
-    color: #fff;
-    display: none;
-    margin: -20px -20px 20px;
-    padding: 20px;
-    white-space: pre-wrap;
-}
-
-/**
-    Apartado resultados
-*/
 hr {
-    /*
-    background: #8ca5d7;
-    transition: background 2s;*/
     border: none;
     height: 1px;
     background: linear-gradient(-45deg, #8152ee, #d65888, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
-#root {
-    display: flex;
+#resultados {
+    display: none;
     flex-wrap: wrap;
     gap: 20px;
 }
-.tarjeta {
+.tarjeta, form {
     width: 300px;
     min-height: 150px;
     padding: 2px;
@@ -85,6 +32,20 @@ hr {
     color: white;
     margin-top: 30px;
     border-radius: 5px;
+}
+
+#menu{
+    width: 200px;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    margin: 30px 40px 0 0;
+    border-radius: 5px;
+    min-height: 300px;
+}
+
+#menu a{
+    color: white;
 }
 
 @keyframes gradient {

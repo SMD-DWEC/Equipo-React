@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './form.js'
+import './menu.js'
 
 /**
  * Al pulsar el botón se generará una Lista de Resultados (que será un componente React),
@@ -52,4 +53,4 @@ class Tarjeta extends React.Component {
 
 // ========================================
 
-ReactDOM.render(<Resultados />, document.getElementById("root"));
+ReactDOM.render(<Resultados />, document.getElementById("resultados"));
