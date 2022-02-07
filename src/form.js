@@ -24,13 +24,15 @@ class Input extends React.Component {
 }
 /******************************************************/
 
-class Boton extends React.Component {
-    mostrarResultado(){
-        console.log('debug');
+export class Boton extends React.Component {
+    clicBoton(e){
+        e.preventDefault();
+        document.getElementById('form').style.display='none';
+        document.getElementById('resultados').style.display='flex';
     }
     render(){
         return(
-            <button onClick={this.mostrarResultado}>{this.props.texto}</button>
+            <button onClick={this.clicBoton}>{this.props.texto}</button>
         );
     }
 }
@@ -55,6 +57,8 @@ class Formulario extends React.Component {
     render(){
         return(
             <form>
+                <h2>Formulario</h2>
+                <hr></hr>
                 <div className='grupo-inputs'>
                     {this.renderEtiqueta('Nombre')}
                     {this.renderInput()}

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {headerwrapper } from "./styles/Header"
-
+import ReactDOM from 'react-dom';
 
 function Opciones(props){
     return(
@@ -9,7 +8,7 @@ function Opciones(props){
 }
 
 function Menu(){
-    let item =[]
+    let items =[]
 
     for(let i = 0; i<3; i++){
         items.push(<li key={i}><a href={'#'}>Opcion {i +1}</a> </li>)
@@ -19,7 +18,9 @@ function Menu(){
 
 
         <ul>
-            {item}
+            {items}
         </ul>
     )
 }
+
+ReactDOM.render(<Menu />, document.getElementById('menu'));
